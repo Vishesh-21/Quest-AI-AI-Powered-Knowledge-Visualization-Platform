@@ -1,5 +1,6 @@
 import dotenv from "dotenv";
 import app from "./app";
+import connectDB from "./config/db";
 
 // Load Environment Variables
 dotenv.config({ quiet: true });
@@ -10,6 +11,7 @@ const PORT = process.env.PORT || 5000;
 const startServer = async () => {
   try {
     //database connection
+    await connectDB();
 
     //start server
     app.listen(PORT, () => {
