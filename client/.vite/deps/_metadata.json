@@ -2,7 +2,48 @@
   "hash": "38c778b2",
   "configHash": "11de8324",
   "lockfileHash": "76d830a9",
-  "browserHash": "ad7f4b1b",
-  "optimized": {},
-  "chunks": {}
+  "browserHash": "e98a2ebc",
+  "optimized": {
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/.pnpm/react@19.2.4/node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "28693f05",
+      "needsInterop": true
+    },
+    "react": {
+      "src": "../../node_modules/.pnpm/react@19.2.4/node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "9b1a5daf",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "aeb234e9",
+      "needsInterop": true
+    },
+    "class-variance-authority": {
+      "src": "../../node_modules/.pnpm/class-variance-authority@0.7.1/node_modules/class-variance-authority/dist/index.mjs",
+      "file": "class-variance-authority.js",
+      "fileHash": "0f07c316",
+      "needsInterop": false
+    },
+    "radix-ui": {
+      "src": "../../node_modules/.pnpm/radix-ui@1.4.3_@types+react_8630af8f756c6a5269f4297295494860/node_modules/radix-ui/dist/index.mjs",
+      "file": "radix-ui.js",
+      "fileHash": "8339cdb8",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-YRN42FDL": {
+      "file": "chunk-YRN42FDL.js"
+    },
+    "chunk-Z6UBE6BC": {
+      "file": "chunk-Z6UBE6BC.js"
+    },
+    "chunk-G3PMV62Z": {
+      "file": "chunk-G3PMV62Z.js"
+    }
+  }
 }
