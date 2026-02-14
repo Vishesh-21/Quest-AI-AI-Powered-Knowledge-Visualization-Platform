@@ -1,6 +1,5 @@
+import { AuthLayout } from "@/components/auth/auth-layout";
 
 export const AuthPage = () => {
-  return (
-    <div>AuthPage</div>
-  )
-}
+  return <AuthLayout />;
+};
