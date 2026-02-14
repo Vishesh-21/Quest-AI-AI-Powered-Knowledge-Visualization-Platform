@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { FcGoogle } from "react-icons/fc";
 import { Badge } from "@/components/ui/badge";
 
-export const AuthHero = () => {
+export const AuthHero = ({ handleClick }: { handleClick: () => void }) => {
   return (
     <div className="space-y-8 text-center lg:text-left">
       <div className="space-y-4">
@@ -16,7 +16,9 @@ export const AuthHero = () => {
           ✨ AI Powered Knowledge Engine
         </Badge>
 
-        <Heading as="h2" className="text-shadow-none">Think. Prompt. Visualize.</Heading>
+        <Heading as="h2" className="text-shadow-none">
+          Think. Prompt. Visualize.
+        </Heading>
 
         <SubHeading>
           Quest-AI turns raw ideas into structured knowledge, intelligent notes,
@@ -36,6 +38,7 @@ export const AuthHero = () => {
             hover:shadow-md
             cursor-pointer
           "
+          onClick={handleClick}
         >
           <FcGoogle className="h-5 w-5" />
           Continue with Google

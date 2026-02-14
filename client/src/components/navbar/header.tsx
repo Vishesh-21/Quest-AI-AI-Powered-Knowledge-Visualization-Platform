@@ -27,10 +27,10 @@ export function Navbar() {
         className={`
           flex py-2 px-3 items-center justify-between
           backdrop-blur-xl border-b border-border/40
-          
+          bg-linear-to-br from-background/50 to-transparent
           ${
             scrolled
-              ? "w-[80%] max-w-6xl dark:bg-zinc-800/50 rounded-full border shadow-lg"
+              ? "w-[80%] max-w-6xl rounded-full border shadow-lg"
               : "w-full rounded-none"
           }
         `}
