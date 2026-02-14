@@ -1,12 +1,18 @@
-import { Button } from "./components/ui/button";
+import { Container } from "./components/contain";
+import { Navbar } from "./components/navbar/header";
+import { AppRoutes } from "./routes/routes";
 
-const App = () => {
+export const App = () => {
+
   return (
-    <div>
-      <h1>QUEST-AI</h1>
-      <Button>Hello world</Button>
-    </div>
+    <Container>
+      {/* nav bar */}
+      <Navbar/>
+
+      {/* main content  */}
+      <AppRoutes />
+
+      {/* footer  */}
+    </Container>
   );
 };
-
-export default App;
