@@ -30,7 +30,7 @@ export function Navbar() {
           
           ${
             scrolled
-              ? "w-[90%] max-w-6xl dark:bg-zinc-800/50 rounded-full border shadow-lg"
+              ? "w-[80%] max-w-6xl dark:bg-zinc-800/50 rounded-full border shadow-lg"
               : "w-full rounded-none"
           }
         `}

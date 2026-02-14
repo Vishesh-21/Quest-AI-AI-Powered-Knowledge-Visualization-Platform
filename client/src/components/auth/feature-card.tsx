@@ -36,8 +36,11 @@ export const FeatureCard = ({
           transition-all duration-300
           hover:-translate-y-1
           hover:shadow-xl
+          relative
+          overflow-hidden
         "
       >
+        <div className="absolute inset-0 bg-linear-to-br from-foreground/10 to-transparent"/>
         <CardContent className=" flex flex-col justify-between h-full">
           <div className="flex items-center gap-3">
             <div
