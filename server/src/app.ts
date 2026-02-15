@@ -2,6 +2,7 @@ import express, { type Application } from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import authRoutes from "./routes/auth.route";
+import userRoutes from "./routes/user.route";
 
 const app: Application = express();
 
@@ -20,10 +21,8 @@ app.use(cors(corsOption));
 // ==== routes for google auth ====
 app.use("/api/auth", authRoutes);
 
-app.use((req, res, next) => {
-  res.removeHeader("Cross-Origin-Opener-Policy");
-  next();
-});
+// ==== routes for user ====
+app.use("/api/user", userRoutes);
 
 app.get("/", (req, res) => {
   res.json({ message: "Hello from server!" });
