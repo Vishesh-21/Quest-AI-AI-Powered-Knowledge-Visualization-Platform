@@ -4,6 +4,7 @@ export interface IUserModel extends mongoose.Document {
   name: string;
   email: string;
   credits: number;
+  imageURL: string;
   isCreditAvailable: boolean;
   notes: mongoose.Types.ObjectId[];
 }
@@ -18,6 +19,11 @@ export const UserSchema = new mongoose.Schema<IUserModel>(
       type: String,
       required: true,
       unique: true,
+    },
+    imageURL: {
+      type: String,
+      default:
+        "https://i.pinimg.com/736x/32/23/ae/3223ae7efbcd98dadbe20465fcd6b7ab.jpg",
     },
     credits: {
       type: Number,
@@ -39,4 +45,4 @@ export const UserSchema = new mongoose.Schema<IUserModel>(
   },
 );
 
-export const UserModel = mongoose.model<IUserModel>("User", UserSchema); 
+export const UserModel = mongoose.model<IUserModel>("User", UserSchema);
