@@ -1,3 +1,5 @@
+import { Container } from "@/components/contain";
+
 export const HomePage = () => {
-  return <div className="h-[200vh]">HomePage</div>;
+  return <Container className="">HomePage</Container>;
 };

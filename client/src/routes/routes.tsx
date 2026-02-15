@@ -1,11 +1,19 @@
 import { Routes, Route } from "react-router-dom";
 import { HomePage } from "../pages/home-page";
 import { AuthPage } from "@/pages/user-auth";
+import { ProtectedRoute } from "./protected-routes";
 
 export const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
+      <Route
+        path="/"
+        element={
+          <ProtectedRoute>
+            <HomePage />
+          </ProtectedRoute>
+        }
+      />
       <Route path="/auth" element={<AuthPage />} />
     </Routes>
   );
