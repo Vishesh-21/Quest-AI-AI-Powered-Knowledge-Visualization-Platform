@@ -13,7 +13,8 @@ export function ToggleModeButton() {
       onClick={toggleTheme}
       className="
         relative flex items-center justify-center
-        h-10 w-10 rounded-md cursor-pointer
+        h-9 w-9 rounded-md cursor-pointer
+        border
         bg-transparent
         transition-all duration-300
         hover:bg-muted
@@ -23,7 +24,7 @@ export function ToggleModeButton() {
       {/* Sun */}
       <Sun
         className="
-          absolute h-5 w-5
+          absolute h-4 w-4
           transition-all duration-300
           opacity-0 scale-75
           dark:opacity-100 dark:scale-100
@@ -33,7 +34,7 @@ export function ToggleModeButton() {
       {/* Moon */}
       <Moon
         className="
-          absolute h-5 w-5
+          absolute h-4 w-4
           transition-all duration-300
           opacity-100 scale-100
           dark:opacity-0 dark:scale-75

@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { HomePage } from "../pages/home-page";
 import { AuthPage } from "@/pages/user-auth";
-import { ProtectedRoute } from "./protected-routes";
+import { ProtectedRoute, PublicRoute } from "./protected-routes";
 
 export const AppRoutes = () => {
   return (
@@ -14,7 +14,14 @@ export const AppRoutes = () => {
           </ProtectedRoute>
         }
       />
-      <Route path="/auth" element={<AuthPage />} />
+      <Route
+        path="/auth"
+        element={
+          <PublicRoute>
+            <AuthPage />
+          </PublicRoute>
+        }
+      />
     </Routes>
   );
 };

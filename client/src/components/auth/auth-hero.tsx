@@ -3,10 +3,16 @@ import { SubHeading } from "@/components/sub-heading";
 import { Button } from "@/components/ui/button";
 import { FcGoogle } from "react-icons/fc";
 import { Badge } from "@/components/ui/badge";
+import { motion } from "motion/react";
 
 export const AuthHero = ({ handleClick }: { handleClick: () => void }) => {
   return (
-    <div className="space-y-8 text-center lg:text-left">
+    <motion.div
+      initial={{ opacity: 0, filter: "blur(8px)" }}
+      animate={{ opacity: 1, filter: "blur(0px)" }}
+      transition={{ duration: 0.5 }}
+      className="space-y-8 text-center lg:text-left"
+    >
       <div className="space-y-4">
         {/* Badge */}
         <Badge
@@ -48,6 +54,6 @@ export const AuthHero = ({ handleClick }: { handleClick: () => void }) => {
           Secure authentication powered by Google
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };

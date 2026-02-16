@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ToggleModeButton } from "../toggle-mode";
 import { Link } from "react-router-dom";
 import Heading from "../heading";
+import { useAppSelector } from "@/redux/hook";
+import { CreditsMenu } from "./credits-menu";
+import { UserMenu } from "./user-menu";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const { userData } = useAppSelector((state) => state.user);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,11 +45,12 @@ export function Navbar() {
         {/* Right Section */}
         <div className="flex items-center gap-2">
           <ToggleModeButton />
-
-          <Avatar className="h-9 w-9 cursor-pointer">
-            <AvatarImage src="https://i.pinimg.com/736x/6c/45/e0/6c45e095370e521e1437c8eb949f8079.jpg" />
-            <AvatarFallback>V</AvatarFallback>
-          </Avatar>
+          {userData && (
+            <>
+              <CreditsMenu credits={userData?.credits} />
+              <UserMenu name={userData?.name} imageURL={userData?.imageURL} />
+            </>
+          )}
         </div>
       </motion.header>
     </div>
@@ -60,7 +64,7 @@ export function Logo() {
         src="/logo.png"
         alt="Quest-AI Logo"
         loading="lazy"
-        className="w-10 h-10 object-contain transition-transform duration-300 group-hover:scale-105"
+        className="md:w-10 md:h-10 h-7 w-7 object-contain transition-transform duration-300 group-hover:scale-105"
       />
 
       <Heading as="h4">uest-AI</Heading>
