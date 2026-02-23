@@ -1,5 +1,10 @@
 import { Container } from "@/components/contain";
+import HeroSection from "@/components/home/hero-section";
 
 export const HomePage = () => {
-  return <Container className="h-[200vh]">HomePage</Container>;
+  return (
+    <Container >
+      <HeroSection />
+    </Container>
+  );
 };
