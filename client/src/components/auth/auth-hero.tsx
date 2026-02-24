@@ -15,7 +15,10 @@ export const AuthHero = ({ handleClick }: { handleClick: () => void }) => {
 
       {/* CONTENT CONTAINER */}
       <div className="relative z-10 flex flex-col items-center text-center max-w-5xl mx-auto">
-        <Badge variant="outline" className="py-2 absolute right-50 -top-5 text-muted-foreground px-4 border-primary/50">
+        <Badge
+          variant="outline"
+          className="py-2 absolute right-50 -top-5 text-muted-foreground px-4 border-primary/50"
+        >
           <span className="font-sans font-semibold tracking-wide">
             ✨ AI Powered Knowledge Engine
           </span>
@@ -34,8 +37,11 @@ export const AuthHero = ({ handleClick }: { handleClick: () => void }) => {
         </div>
 
         <div className="flex flex-col items-center gap-8">
-          <Button size="lg" onClick={handleClick}
-          className="rounded-full mt-16 cursor-pointer">
+          <Button
+            size="lg"
+            onClick={handleClick}
+            className="rounded-full mt-16 cursor-pointer"
+          >
             <FcGoogle className="h-7 w-7" />
             <span className="tracking-tight">Continue with Google</span>
           </Button>

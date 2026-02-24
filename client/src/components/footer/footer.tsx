@@ -1,5 +1,6 @@
 import { Github, Twitter, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Container } from "../contain";
 
 /* ----------------------------- */
 /* Data Configuration */

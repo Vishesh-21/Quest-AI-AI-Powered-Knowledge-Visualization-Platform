@@ -46,7 +46,7 @@ const cards = [
 
 const HeroFeatures = () => {
   return (
-    <section className="relative w-full pt-18 pb-10  bg-background">
+    <section className="relative w-full pt-18 pb-10 ">
       <div className="container mx-auto px-6 space-y-14">
         <div className="text-center space-y-4">
           <Heading as="h2" className="text-4xl font-bold tracking-tight">
@@ -61,7 +61,7 @@ const HeroFeatures = () => {
         {/* Premium Grid */}
         <div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 
-                        gap-2"
+                        gap-2 border border-primary/20 p-2 rounded-xl"
         >
           {cards.map((card, index) => (
             <CustomCard key={index} {...card} />

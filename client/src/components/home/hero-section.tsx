@@ -12,7 +12,7 @@ const points: string[] = [
 
 const HeroSection = () => {
   return (
-    <section className="relative w-full min-h-[80vh] flex items-center overflow-hidden bg-background">
+    <section className="relative w-full min-h-[80vh] flex items-center overflow-hidden">
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Side: Content */}
         <div className="flex flex-col space-y-6">
@@ -21,11 +21,11 @@ const HeroSection = () => {
           </Badge>
 
           <div>
-            <Heading className="text-shadow-xl font-thin" as="h3">
+            <Heading className="text-shadow-xl italic font-serif font-bold" as="h3">
               Create Smart AI Notes <br />
               Effortlessly in Second with
             </Heading>
-            <Heading className="tracking-wider font-extrabold bg-linear-to-r to-indigo-200 via-blue-500 from-pink-500 bg-clip-text text-transparent">
+            <Heading className="tracking-tight font-extrabold bg-linear-to-r to-indigo-200 via-blue-500 from-pink-500 bg-clip-text text-transparent">
               QUEST-AI
             </Heading>
           </div>
@@ -50,7 +50,7 @@ const HeroSection = () => {
           </div>
         </div>
 
-         <div className="relative rounded-2xl border bg-card shadow-2xl p-2">
+         <div className="relative rounded-2xl border bg-card shadow-md p-2">
             <img
               src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
               alt="Dashboard Preview"
