@@ -1,11 +1,11 @@
 import { Container } from "@/components/contain";
 import { AuthHero } from "./auth-hero";
-import { FeatureGrid } from "./feature-grid";
 import { toast } from "sonner";
 import { loginWithGoogle } from "@/services/auth-services";
 import { useAppDispatch } from "@/redux/hook";
 import { setUserData } from "@/redux/slices/user-slice";
 import { useNavigate } from "react-router-dom";
+import { AuthCards } from "./feature-card";
 
 export const AuthLayout = () => {
   const dispatch = useAppDispatch();
@@ -22,13 +22,9 @@ export const AuthLayout = () => {
   };
 
   return (
-    <Container className="py-10">
-      <div className="relative flex items-center ">
-        <div className="grid w-full gap-12 lg:grid-cols-2 items-center">
+    <Container>
           <AuthHero handleClick={handleGoogleAuth} />
-          <FeatureGrid />
-        </div>
-      </div>
+          <AuthCards />
     </Container>
   );
 };
