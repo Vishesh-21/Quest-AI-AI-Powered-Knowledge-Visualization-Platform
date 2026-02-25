@@ -2,10 +2,16 @@ import { toast } from "sonner";
 import { Button } from "../ui/button";
 import { AnimatedPopover } from "./animate-popover";
 import { UserAvatar } from "./user-avatar";
-import { LogOut, Settings, User } from "lucide-react";
+import {
+  BadgeDollarSign,
+  Home,
+  LogOut,
+  Notebook,
+  Settings,
+} from "lucide-react";
 import { logout } from "@/services/apis";
 import { useAppDispatch } from "@/redux/hook";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 type UserMenuProps = {
   name?: string;
@@ -14,12 +20,24 @@ type UserMenuProps = {
 
 const userMenuItems = [
   {
-    label: "Profile",
-    icon: User,
+    label: "Home",
+    icon: Home,
+    to: "/",
+  },
+  {
+    label: "My Notes",
+    icon: Notebook,
+    to: "/my-notes",
   },
   {
     label: "History",
     icon: Settings,
+    to: "/history",
+  },
+  {
+    label: "Pricing",
+    icon: BadgeDollarSign,
+    to: "/pricing",
   },
 ];
 
@@ -48,28 +66,38 @@ export const UserMenu = ({ name, imageURL }: UserMenuProps) => {
     >
       <div className="space-y-3">
         <div>
-          <p className="text-sm font-semibold">{name}</p>
-          <p className="text-xs text-muted-foreground">Manage your account</p>
+          <p className="text-sm font-semibold">Hey👋, {name}</p>
         </div>
 
         <div className="border-t border-background pt-3 space-y-2 text-sm">
           {userMenuItems.map((item) => (
-            <div
+            <NavLink
               key={item.label}
-              className="flex items-center flex-row justify-between cursor-pointer"
+              to={item.to}
+              className={({ isActive }) =>
+                `
+                flex items-center gap-2
+                px-3 py-2 
+                transition-all duration-300
+                group
+                ${
+                  isActive
+                    ? "text-white bg-amber-700 hover:bg-amber-600"
+                    : "text-muted-foreground hover:bg-muted/10 hover:text-background"
+                }
+              `
+              }
             >
-              <div className="flex items-center gap-2 text-muted-foreground hover:text-background transition-all duration-300 hover:ml-1 active:scale-95 py-2 w-full hover:bg-background/10 rounded-1 px-2">
-                <item.icon className="w-4 h-4" />
-                <span>{item.label}</span>
-              </div>
-            </div>
+              <item.icon className="w-4 h-4 transition-transform group-hover:scale-110" />
+              <span>{item.label}</span>
+            </NavLink>
           ))}
 
           <Button
-            className="w-full cursor-pointer bg-amber-700 hover:bg-amber-600 text-white"
+            className="w-full rounded-none cursor-pointer group"
             onClick={handleLogout}
           >
-            <LogOut className="w-4 h-4 mr-2 " />
+            <LogOut className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform duration-300" />
             Log out
           </Button>
         </div>
