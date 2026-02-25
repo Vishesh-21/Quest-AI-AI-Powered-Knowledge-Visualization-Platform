@@ -3,8 +3,9 @@ import { HomePage } from "../pages/home-page";
 import { AuthPage } from "@/pages/user-auth";
 import { ProtectedRoute, PublicRoute } from "./protected-routes";
 import { PricingPage } from "@/pages/pricing-page";
-import { NotesPage } from "@/pages/note-page";
+import { NotesPage } from "@/pages/mynotes-page";
 import { HistoryPage } from "@/pages/history-page";
+import { GenerateNotes } from "@/pages/generate-notes";
 
 export const AppRoutes = () => {
   return (
@@ -38,6 +39,14 @@ export const AppRoutes = () => {
         element={
           <ProtectedRoute>
             <HistoryPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/generate-notes"
+        element={
+          <ProtectedRoute>
+            <GenerateNotes />
           </ProtectedRoute>
         }
       />
