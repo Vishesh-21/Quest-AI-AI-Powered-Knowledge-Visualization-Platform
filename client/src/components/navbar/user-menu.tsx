@@ -8,6 +8,7 @@ import {
   LogOut,
   Notebook,
   Settings,
+  Sparkle,
 } from "lucide-react";
 import { logout } from "@/services/apis";
 import { useAppDispatch } from "@/redux/hook";
@@ -23,6 +24,11 @@ const userMenuItems = [
     label: "Home",
     icon: Home,
     to: "/",
+  },
+  {
+    label: "Generate Notes",
+    icon: Sparkle,
+    to: "/generate-notes",
   },
   {
     label: "My Notes",
